@@ -1,9 +1,15 @@
 import React from "react";
-import ClockIcon from "../images/clock.svg";
-import MoneyIcon from "../images/money.svg";
-import TeamworkIcon from "../images/teamwork.svg";
-import DiagramIcon from "../images/diaphragm.svg";
-import Skate from "../images/Skate.png";
+import ClockIcon from "../assets/images/clock.svg";
+import MoneyIcon from "../assets/images/money.svg";
+import TeamworkIcon from "../assets/images/teamwork.svg";
+import DiagramIcon from "../assets/images/diaphragm.svg";
+import Skate from "../assets/images/Skate.png";
+import styled from "styled-components";
+
+const ServicesStyles = styled.div`
+
+
+`
 
 const Services = () =>{
     return(
