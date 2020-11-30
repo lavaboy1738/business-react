@@ -1,5 +1,30 @@
+@font-face{
+    font-family: Jakarta-text;
+    src: url("./assets/fonts/PlusJakartaText-Regular\ copy.otf");
+    font-weight: regular;
+}
+
+@font-face{
+    font-family: Jakarta-text;
+    src: url("./assets//fonts/PlusJakartaText-Light\ copy.otf");
+    font-weight: light;
+}
+
+@font-face{
+    font-family: Jakarta-display;
+    src: url("./assets/fonts/PlusJakartaDisplay-Medium\ copy.otf");
+    font-weight: regular;
+}
+
+@font-face{
+    font-family: Jakarta-display;
+    src: url("./assets/fonts/PlusJakartaDisplay-Bold\ copy.otf");
+    font-weight: bold;
+}
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: Jakarta-text;
 }
