@@ -2,6 +2,7 @@ import React from "react";
 import {Hero} from "../Components/Hero";
 import {Services} from "../Components/Services";
 import {Accordion} from "../Components/Accordion";
+import {Nav} from "../Components/Nav";
 import styled from "styled-components";
 
 const AboutStyles = styled.div`
@@ -9,7 +10,6 @@ const AboutStyles = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid blue;
     background-color: rgba(250,250,250, 1);
 `
 
@@ -17,6 +17,7 @@ const AboutStyles = styled.div`
 const About = () =>{
     return(
         <AboutStyles>
+            <Nav/>
             <Hero/>
             <Services/>
             <Accordion/>

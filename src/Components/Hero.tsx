@@ -70,7 +70,7 @@ const Hero = () =>{
                     </div>
                 </div>
                 <div className="subtitle">
-                    <p>I don't know what to put here. I can write good copies but the purpose of this project is to build a business website that looks legit.</p>
+                    <p>I don't know what to put here. I write good copies but the purpose of this project is to build a business website that looks legit.</p>
                 </div>
                 <button>Contact Us</button>
             </div>
