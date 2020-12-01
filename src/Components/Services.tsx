@@ -7,8 +7,9 @@ import Skate from "../assets/images/Skate.png";
 import styled from "styled-components";
 
 const ServicesStyles = styled.div`
+    width: 90%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     color: #333;
     .services-left{
@@ -18,7 +19,7 @@ const ServicesStyles = styled.div`
         }
     }
     .services-right{
-        width: 45%;
+        width: 50%;
         align-self: stretch;
         display: flex;
         flex-direction: column;
@@ -26,7 +27,7 @@ const ServicesStyles = styled.div`
         align-items: center;
         .services-description{
             font-family: Jakarta-display;
-            font-weight: bold;
+            font-weight: 600;
             font-size: 1.5rem;
         }
         .services-cards{
@@ -41,7 +42,7 @@ const ServicesStyles = styled.div`
                     margin-bottom: 1rem;
                     margin-top:  0.5rem;
                     font-family: Jakarta-display;
-                    font-weight: bold;
+                    font-weight: 600;
                     font-size: 1.2rem;
                 }
                 .card-text{

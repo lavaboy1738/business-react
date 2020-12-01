@@ -4,13 +4,13 @@ import styled from "styled-components";
 
 const HeroStyles = styled.div`
     min-height: 90vh;
+    width: 90%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    padding: 5rem 5rem;
+    justify-content: space-between;
     color: #333;
     .hero-description{
-        width: 45%;
+        width: 50%;
         .title{
             font-family: Jakarta-display;
             font-weight: bold;

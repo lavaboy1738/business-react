@@ -1,11 +1,44 @@
 import React from "react";
+import styled from "styled-components";
+
+const AccordionStyles = styled.div`
+width: 90%;
+    .accordion-title{
+        font-family: Jakarta-display;
+        font-weight: 600;
+        font-size: 1.7rem;
+        h2{
+            line-height: 3.2rem;
+        }
+        .blue{
+            color:#768cff;
+        }
+    }
+    .accordion-content{
+        .question{
+            border-bottom: 1px solid #768cff;
+            padding: 2rem 0;
+            h4{
+                font-family: Jakarta-display;
+                font-weight: 400;
+                font-size: 1.5rem;
+            }
+            .answer{
+                font-family: Jakarta-text;
+                font-weight: 200;
+                font-size: 1.2rem;
+            }
+        }
+
+    }
+`
 
 const Accordion = () =>{
     return(
-        <div className="accordion">
+        <AccordionStyles>
             <div className="accordion-title">
                 <h2>Any Questions?</h2>
-                <h2>We Got Answers</h2>
+                <h2 className="blue">We Got Answers.</h2>
             </div>
             <div className="accordion-content">
                 <div className="question">
@@ -41,7 +74,7 @@ const Accordion = () =>{
                     </div>
                 </div>
             </div>
-        </div>
+        </AccordionStyles>
     )
 }
 
