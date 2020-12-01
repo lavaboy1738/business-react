@@ -7,17 +7,58 @@ import Skate from "../assets/images/Skate.png";
 import styled from "styled-components";
 
 const ServicesStyles = styled.div`
-
-
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #333;
+    .services-left{
+        width: 45%;
+        img{
+            width: 100%;
+        }
+    }
+    .services-right{
+        width: 45%;
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        .services-description{
+            font-family: Jakarta-display;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .services-cards{
+            flex-grow: 0.5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            &-card{
+                width: 45%;
+                .card-title{
+                    margin-bottom: 1rem;
+                    margin-top:  0.5rem;
+                    font-family: Jakarta-display;
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                }
+                .card-text{
+                    font-family: Jakarta-text;
+                    font-weight: regular;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
 `
 
 const Services = () =>{
     return(
-        <div>
+        <ServicesStyles>
             <div className="services-left">
-                <div className="services-image">
-                    <img src={Skate} alt=""/>
-                </div>
+                <img src={Skate} alt=""/>
             </div>
             <div className="services-right">
                 <div className="services-description">
@@ -54,7 +95,7 @@ const Services = () =>{
                     </div>
                 </div>
             </div>
-        </div>
+        </ServicesStyles>
     )
 }
 

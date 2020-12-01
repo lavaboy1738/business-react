@@ -17,6 +17,7 @@ const HeroStyles = styled.div`
             font-size: 1.6rem;
             margin-bottom: 1.2rem;
             .hide{
+                overflow: hidden;
                 span{
                     color: #768cff;
                 }
@@ -30,7 +31,7 @@ const HeroStyles = styled.div`
         }
         button{
             font-family: Jakarta-text;
-            font-weight: regular;
+            font-weight: lighter;
             font-size: 1rem;
             border: 1px solid #768cff;
             padding: 0.5rem 1rem;
@@ -46,6 +47,7 @@ const HeroStyles = styled.div`
     }
     .hero-photo{
         width: 45%;
+        overflow: hidden;
         img{
             width: 100%;
         }
