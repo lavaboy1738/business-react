@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {Link, Router} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const NavStyles = styled.div`
     height: 10vh;
@@ -8,7 +8,6 @@ const NavStyles = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(250,250,250, 1);
     h1{
         font-family: Jakarta-display;
         font-weight: 600;

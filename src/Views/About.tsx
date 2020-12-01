@@ -9,7 +9,6 @@ const AboutStyles = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(250,250,250, 1);
 `
 
 
