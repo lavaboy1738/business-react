@@ -2,7 +2,6 @@ import React from "react";
 import {Hero} from "../Components/Hero";
 import {Services} from "../Components/Services";
 import {Accordion} from "../Components/Accordion";
-import {Nav} from "../Components/Nav";
 import styled from "styled-components";
 
 const AboutStyles = styled.div`
@@ -17,7 +16,6 @@ const AboutStyles = styled.div`
 const About = () =>{
     return(
         <AboutStyles>
-            <Nav/>
             <Hero/>
             <Services/>
             <Accordion/>
