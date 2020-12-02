@@ -19,7 +19,7 @@ export type Project = {
     color: string
 }
 
-export const Projects: Project[] = [
+const ProjectsData: Project[] = [
     {
         id: 1,
         title: "Automatic Waches",
@@ -105,3 +105,42 @@ export const Projects: Project[] = [
         color: "#4dc3b1"
     }
 ]
+
+    //rearrange the projects array into an array of two and three  projects for rendering.
+
+const rearrange = ()  => {
+    let twos = 0;
+    let threes = 1;
+    const output: Project[][] = [];
+    ProjectsData.forEach((project) => {
+        if(output[twos]){
+            if(output[twos].length < 2){
+                output[twos].push(project);
+                return;
+            }
+        }else{
+            output[twos] = [project];
+            return;
+        }
+
+        if(output[threes]){
+            if(output[threes].length < 3){
+                output[threes].push(project);
+                return;
+            }
+        }else{
+            output[threes] = [project];
+            return;
+        }
+
+        twos +=2;
+        threes +=2;
+        output[twos] = [project];
+    })
+    return output;
+}
+
+const ArrangedProjects = rearrange();
+
+export {ArrangedProjects}
+

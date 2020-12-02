@@ -1,6 +1,6 @@
-import React, {useEffect} from "react";
+import React from "react";
 import styled from "styled-components";
-import {Projects, Project} from "../data/ProjectsData";
+import {ArrangedProjects} from "../data/ProjectsData";
 import {WorksProject} from "../Components/WorksProject";
 import {Link} from "react-router-dom";
 
@@ -47,40 +47,6 @@ const WorksStyles = styled.div`
 `
 
 const Works = () =>{
-    //rearrange the projects array into an array of two and three  projects for rendering.
-    const rearrange = ()  => {
-        let twos = 0;
-        let threes = 1;
-        const output: Project[][] = [];
-        Projects.forEach((project) => {
-            if(output[twos]){
-                if(output[twos].length < 2){
-                    output[twos].push(project);
-                    return;
-                }
-            }else{
-                output[twos] = [project];
-                return;
-            }
-
-            if(output[threes]){
-                if(output[threes].length < 3){
-                    output[threes].push(project);
-                    return;
-                }
-            }else{
-                output[threes] = [project];
-                return;
-            }
-
-            twos +=2;
-            threes +=2;
-            output[twos] = [project];
-        })
-        return output;
-    }
-
-    const arranged = rearrange();
 
     return(
         <WorksStyles>
@@ -90,7 +56,7 @@ const Works = () =>{
             </div>
             <div className="works-content">
                 {
-                    arranged.map((arr, index)=>{
+                    ArrangedProjects.map((arr, index)=>{
                         return (<div className = "projects-container" key={index}>
                             {arr.map((project)=>{
                                 return (<Link to="/works/sample-project" key={project.id}>
