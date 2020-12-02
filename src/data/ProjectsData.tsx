@@ -23,7 +23,7 @@ export const Projects: Project[] = [
     {
         id: 1,
         title: "Automatic Waches",
-        subtitle: "It doesn't tik. It glides",
+        subtitle: "It doesn't tik. It glides.",
         url: Project1,
         color: "#768cff"
     },
@@ -37,7 +37,7 @@ export const Projects: Project[] = [
     {
         id: 3,
         title: "Earth Tone Racks",
-        subtitle: "I bet you love this color scheme",
+        subtitle: "I bet you love this color scheme.",
         url: Project3,
         color: "#ffe08e"
     },
@@ -72,21 +72,21 @@ export const Projects: Project[] = [
     {
         id: 8,
         title: "Monte Carlo",
-        subtitle: "We serve chicken on a stick",
+        subtitle: "We serve chicken on a stick.",
         url: Project8,
         color: "#768cff"
     },
     {
         id: 9,
         title: "Munster & Co.",
-        subtitle: "A watch for every occasion",
+        subtitle: "A watch for every occasion.",
         url: Project9,
         color: "#f5f5f5"
     },
     {
         id: 10,
         title: "Sloppy Burgers",
-        subtitle: "So much cheeze that makes your stomach hurt",
+        subtitle: "So much cheeze that makes your stomach hurt.",
         url: Project10,
         color: "#ffe08e"
     },
