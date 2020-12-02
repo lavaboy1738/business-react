@@ -28,10 +28,10 @@ const NavStyles = styled.div`
 const Nav = () => {
     return(
         <NavStyles>
-            <h1>DotCom</h1>
+            <h1><Link to="/">DotCom</Link></h1>
             <ul>
                 <li>
-                    <Link to="/">About Us</Link>
+                    <Link to="/about">About Us</Link>
                 </li>
                 <li>
                     <Link to="/works">Our Works</Link>

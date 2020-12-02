@@ -1,4 +1,5 @@
 import React from 'react';
+import {Home} from "./Views/Home";
 import {About} from "./Views/About";
 import {Nav} from "./Components/Nav";
 import {Works} from "./Views/Works";
@@ -19,6 +20,9 @@ function App() {
           <Nav/>
           <Switch>
             <Route path="/" exact>
+              <Home/>
+            </Route>
+            <Route path="/about" exact>
               <About/>
             </Route>
             <Route path="/works" exact>
