@@ -3,15 +3,13 @@ import styled from "styled-components";
 
 const WorksProjectStyles = styled.div`
     width: 100%;
-    height: 100%;
     position: relative;
     transition: 0.2s all ease;
     overflow: hidden;
-    
+
     img{
         width: 100%;
-        height: 100%;
-        object-fit: contain;
+        display: block;
         transition: 0.2s all ease;
     }
     &:hover .cover{
@@ -36,6 +34,7 @@ const WorksProjectStyles = styled.div`
         justify-content: center;
         padding: 2vw;
         opacity: 0;
+
         .title{
             color: #333;
             font-family: Jakarta-display;

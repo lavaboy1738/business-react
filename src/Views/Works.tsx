@@ -31,13 +31,11 @@ const WorksStyles = styled.div`
             :nth-child(odd){
                 a{
                     width: 49%;
-                    align-self: stretch;
                 }
             }
             :nth-child(even){
                 a{
                     width: 32%;
-                    align-self: stretch;
                 }
             }
         }
