@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import AboutHeader from "../assets/images/about-header.jpg";
+import {LeadershipCard} from "../Components/LeadershipCard";
+import {LeadershipData} from "../data/LeadershipData";
 
 
 const AboutStyle = styled.div`
@@ -40,6 +42,18 @@ const AboutStyle = styled.div`
             }
         }
     }
+    .leadership{
+        &-content{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 2rem 0;
+            .leader{
+                width: 30%;
+                margin-bottom: 2rem;
+            }
+        }
+    }
 
 `
 
@@ -70,7 +84,21 @@ const About = ()=>{
             <section className="leadership">
                 <div className="title">Leadership</div>
                 <div className="subtitle">They ask to see the boss, so here they are.</div>
-                <div className="leadership-content"></div>
+                <div className="leadership-content">
+                    {LeadershipData.map((card)=>{
+                        return(
+                            <div className="leader" key={card.id}>
+                                <LeadershipCard
+                                id={card.id}
+                                name={card.name}
+                                title={card.title}
+                                text={card.text}
+                                url={card.url}
+                                />
+                            </div>
+                        )
+                    })}
+                </div>
             </section>
         </AboutStyle>
     )

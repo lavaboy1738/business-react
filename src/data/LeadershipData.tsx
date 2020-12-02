@@ -25,7 +25,7 @@ const LeadershipData: Leader[] = [
         id: 2,
         name: "Mischa Huynh",
         title: "Potion Seller",
-        text: "I woke up today feeling a bit groggy, but overall I think I slept pretty well last night. These days I wake up, eat, and then go straight to coding.",
+        text: "I woke up today feeling a bit groggy, but overall I think I slept pretty well last night. These days I wake up, eat, and then go straight to coding. Put in the work and trust the process.",
         url: Leader2
     },
     {
@@ -46,7 +46,7 @@ const LeadershipData: Leader[] = [
         id: 5,
         name: "Sia Gilmour",
         title: "Tattoo Artist",
-        text: "How come the Weeknd didn't get any Grammy's nomination this year? The guy promoted his album for a long time and he was everywhere. Most streamed artist on spotify and he got snubbed.",
+        text: "How come the Weeknd didn't get any Grammy's nomination this year? The guy promoted his album for a long time and he was everywhere. Most streamed artist on spotify 2020.",
         url: Leader5
     },
     {
