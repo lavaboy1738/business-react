@@ -11,7 +11,7 @@ import Project10 from "../assets/images/project-10.jpg"
 import Project11 from "../assets/images/project-11.jpg"
 import Project12 from "../assets/images/project-12.jpg"
 
-type Project = {
+export type Project = {
     id: number,
     title: string,
     subtitle: string,
@@ -86,7 +86,7 @@ export const Projects: Project[] = [
     {
         id: 10,
         title: "Sloppy Burgers",
-        subtitle: "So much cheeze that makes your stomach hurt.",
+        subtitle: "So much cheese makes your stomach hurt.",
         url: Project10,
         color: "#ffe08e"
     },
