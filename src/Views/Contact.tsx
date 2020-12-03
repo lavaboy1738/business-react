@@ -37,6 +37,8 @@ const ContactStyle = styled.div`
             .map{
                 width: 70%;
                 iFrame{
+                    -webkit-filter: grayscale(80%);
+                    filter: grayscale(80%);
                     width: 100%;
                     height: 100%;
                     border: none;
@@ -47,6 +49,7 @@ const ContactStyle = styled.div`
 `
 
 const Contact = () =>{
+
     return(
         <ContactStyle>
             <div className="contact-header">
@@ -74,7 +77,7 @@ const Contact = () =>{
                     title="map"
                     frameBorder="0"
                     src={`https://www.google.com/maps/embed/v1/place?key=${Key}
-                        &q=Space+Needle,Seattle+WA`} allowFullScreen>
+                        &q=Boston+Statehouse,Boston+MA&zoom=18`} allowFullScreen>
                     </iframe>
                 </div>
             </div>
