@@ -1,10 +1,11 @@
 import React from "react";
+import styled from "styled-components";
 import {Hero} from "../Components/Hero";
 import {Services} from "../Components/Services";
 import {Accordion} from "../Components/Accordion";
-import styled from "styled-components";
 import {WorkContent} from "../Components/WorkContent";
 import {ArrangedProjects} from "../data/ProjectsData";
+import {DefaultButton} from "../Components/DefaultButton";
 
 const HomeStyles = styled.div`
     color: #333;
@@ -25,6 +26,10 @@ const HomeStyles = styled.div`
             font-weight: 200;
             margin-bottom: 1rem;
         }
+        .button-wrapper{
+            padding: 2rem;
+            text-align:center;
+        }
     }
 `
 
@@ -38,6 +43,9 @@ const Home = () =>{
                 <div className="title">Works</div>
                 <div className="subtitle">Look around, you'll be surprised.</div>
                 <WorkContent projectsArr={ArrangedProjects.slice(0,3)}/>
+                <div className="button-wrapper">
+                    <DefaultButton text="More Works" url="/works" />
+                </div>
             </div>
             <Accordion/>
         </HomeStyles>

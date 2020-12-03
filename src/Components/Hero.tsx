@@ -1,6 +1,7 @@
 import React from "react";
 import HeroImage from "../assets/images/Hero.png";
 import styled from "styled-components";
+import {DefaultButton} from "./DefaultButton";
 
 const HeroStyles = styled.div`
     min-height: 90vh;
@@ -37,11 +38,16 @@ const HeroStyles = styled.div`
             padding: 0.5rem 1rem;
             transition: 0.3s all ease;
             border-radius: 5px;
+            a{
+                color: #333;
+            }
             &:hover{
                 background-color: #768cff;
-                color: rgb(250, 250, 250);
                 transition: 0.3s all ease;
                 cursor: pointer;
+                a{
+                    color: rgb(250, 250, 250);
+                }
             }
         }
     }
@@ -72,7 +78,7 @@ const Hero = () =>{
                 <div className="subtitle">
                     <p>I don't know what to put here. I write good copies but the purpose of this project is to build a business website that looks legit.</p>
                 </div>
-                <button>Contact Us</button>
+                <DefaultButton text="Learn More" url="/about" />
             </div>
             <div className="hero-photo">
                 <img src={HeroImage} alt=""/>

@@ -35,13 +35,13 @@ const WorksProjectStyles = styled.div`
         padding: 2vw;
         opacity: 0;
 
-        .title{
+        .cover-title{
             color: #333;
             font-family: Jakarta-display;
             font-size: 1rem;
             font-weight: 400;
         }
-        .subtitle{
+        .cover-subtitle{
             color: #333;
             font-family: Jakarta-text;
             font-size: 1rem;
@@ -62,8 +62,8 @@ const WorksProject = (props: Prop) => {
         <WorksProjectStyles>
             <img src={props.url} alt=""/>
             <div className="cover" style={{backgroundColor: props.color}}>
-                <div className="title">{props.title}</div>
-                <div className="subtitle">{props.subtitle}</div>
+                <div className="cover-title">{props.title}</div>
+                <div className="cover-subtitle">{props.subtitle}</div>
             </div>
         </WorksProjectStyles>
     )
