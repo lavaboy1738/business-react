@@ -32,7 +32,7 @@ const LeadershipData: Leader[] = [
         id: 3,
         name: "Sion Frye",
         title: "Snow Watcher",
-        text: "Do you ever wonder, what if we're all living in a simulation? Elon Musk said that in an interview. If he believes it, and he's that smart, maybe there's something we're not seeing.",
+        text: "Do you ever wonder, what if we're all living in a simulation? Elon Musk said that in an interview. If he believes it and he's that smart, maybe we're missing something.",
         url: Leader3
     },
     {
@@ -46,7 +46,7 @@ const LeadershipData: Leader[] = [
         id: 5,
         name: "Sia Gilmour",
         title: "Tattoo Artist",
-        text: "How come the Weeknd didn't get any Grammy's nomination this year? The guy promoted his album for a long time and he was everywhere. Most streamed artist on spotify 2020.",
+        text: "How come the Weeknd didn't get any Grammy's nominations? The guy promoted his album for a long time and he was everywhere. Most streamed artist on spotify 2020.",
         url: Leader5
     },
     {

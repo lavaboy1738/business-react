@@ -6,6 +6,7 @@ import {Works} from "./Views/Works";
 import {Contact} from "./Views/Contact";
 import {SampleProject} from "./Views/SampleProject";
 import {NotFound} from "./Views/NotFound";
+import ScrollToTop from "./Components/ScrollToTop";
 
 import {
   HashRouter as Router,
@@ -17,6 +18,7 @@ function App() {
   return (
     <div className="App">
         <Router>
+          <ScrollToTop/>
           <Nav/>
           <Switch>
             <Route path="/" exact>

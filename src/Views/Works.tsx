@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {ArrangedProjects} from "../data/ProjectsData";
-import {WorksProject} from "../Components/WorksProject";
-import {Link} from "react-router-dom";
+import {WorkContent} from "../Components/WorkContent";
 
 const WorksStyles = styled.div`
     padding: 2rem 5vw;
@@ -24,26 +23,6 @@ const WorksStyles = styled.div`
             }
         }
     }
-    .works-content{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        .projects-container{
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1.8vw;
-            :nth-child(odd){
-                a{
-                    width: 49%;
-                }
-            }
-            :nth-child(even){
-                a{
-                    width: 32%;
-                }
-            }
-        }
-    }
 `
 
 const Works = () =>{
@@ -54,21 +33,7 @@ const Works = () =>{
                 <div className="works-title-main">Works</div>
                 <div className="works-title-sub">Creativity, Quality, <span>Perfection.</span></div>
             </div>
-            <div className="works-content">
-                {
-                    ArrangedProjects.map((arr, index)=>{
-                        return (<div className = "projects-container" key={index}>
-                            {arr.map((project)=>{
-                                return (<Link to="/works/sample-project" key={project.id}>
-                                    <WorksProject title={project.title} color={project.color} url={project.url}
-                                    subtitle={project.subtitle}
-                                    />
-                                </Link>)
-                            })}
-                        </div>)
-                    })
-                }
-            </div>
+            <WorkContent projectsArr={ArrangedProjects} />
         </WorksStyles>
     )
 }
