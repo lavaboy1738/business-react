@@ -43,6 +43,7 @@ const AboutStyle = styled.div`
         }
     }
     .leadership{
+        margin-bottom: -3rem;
         &-content{
             display: flex;
             flex-wrap: wrap;

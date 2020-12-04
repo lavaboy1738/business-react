@@ -7,7 +7,7 @@ const FooterStyle = styled.div`
     justify-content: space-between;
     color: #333;
     .footer-left{
-        width: 35%;
+        width: 38%;
         &-top{
             font-family: Jakarta-display;
             font-size: 1.5rem;
@@ -26,6 +26,9 @@ const FooterStyle = styled.div`
                 span{
                     width: 50%;
                     margin-bottom: 1rem;
+                    &:hover{
+                        color: #ccc;
+                    }
                 }
             }
         }
@@ -46,7 +49,7 @@ const FooterStyle = styled.div`
             font-weight: 200;
             .office{
                 border-top: 1px solid #333;
-                width: 30%;
+                width: 31%;
                 height: 10rem;
                 display: flex;
                 flex-direction: column;
@@ -87,7 +90,9 @@ const Footer = () =>{
                         <div className="city-address">
                             <div className="city">Boston</div>
                             <p className="address">
-                                1234 State St, Suite 3300
+                                1234 State St, tower B,
+                                <br/>
+                                Suite 3300,
                                 <br/>
                                 Boston, MA, 02109
                             </p>
