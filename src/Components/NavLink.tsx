@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 
 
 const NavLinkStyle = styled.li`
@@ -31,14 +31,13 @@ const NavLinkStyle = styled.li`
 type Prop = {
     text: string,
     url: string,
-    activePage: string,
-    onChange: (name: string)=> void;
 }
 
 const NavLink = (props: Prop)=>{
+    const location = useLocation();
 
     return(
-        <NavLinkStyle onClick={()=>{props.onChange(props.url)}} className={props.activePage === props.url? "active" : ""}>
+        <NavLinkStyle className={location.pathname=== props.url? "active" : ""}>
             <Link to={props.url}>{props.text}</Link>
         </NavLinkStyle>
     )

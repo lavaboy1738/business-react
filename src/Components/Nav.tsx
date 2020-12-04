@@ -29,9 +29,9 @@ const Nav = () => {
         <NavStyles>
             <h1><Link to="/" onClick={()=>{setActivePage("/home")}}>DotCom</Link></h1>
             <ul>
-                <NavLink text="About Us" url="/about" activePage={activePage} onChange={setActivePage}/>
-                <NavLink text="Works" url="/works" activePage={activePage} onChange={setActivePage}/>
-                <NavLink text="Contact Us" url="/contact" activePage={activePage} onChange={setActivePage}/>
+                <NavLink text="About Us" url="/about" />
+                <NavLink text="Works" url="/works" />
+                <NavLink text="Contact Us" url="/contact" />
             </ul>
         </NavStyles>
     )
