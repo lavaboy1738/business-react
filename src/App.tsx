@@ -6,6 +6,7 @@ import {Works} from "./Views/Works";
 import {Contact} from "./Views/Contact";
 import {SampleProject} from "./Views/SampleProject";
 import {NotFound} from "./Views/NotFound";
+import {Footer} from "./Components/Footer";
 import ScrollToTop from "./Components/ScrollToTop";
 
 import {
@@ -40,6 +41,7 @@ function App() {
               <NotFound/>
             </Route>
           </Switch>
+          <Footer/>
         </Router>
     </div>
   );

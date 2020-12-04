@@ -47,10 +47,10 @@ const AboutStyle = styled.div`
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            padding: 2rem 0;
+            padding-top: 2rem;
             .leader{
                 width: 30%;
-                margin-bottom: 2rem;
+                margin-bottom: 3rem;
             }
         }
     }
