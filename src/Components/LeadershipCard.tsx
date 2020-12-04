@@ -35,7 +35,9 @@ const LeadershipCard = (props: Leader) => {
             <img src={props.url} alt=""/>
             <div className="name">{props.name}</div>
             <div className="job-title">{props.title}</div>
-            <div className="text">{props.text}</div>
+            <div className="text">
+                <p>{props.text}</p>
+            </div>
         </LeadershipCardStyles>
     )
 }

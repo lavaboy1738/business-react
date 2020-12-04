@@ -73,28 +73,28 @@ const Services = () =>{
                             <img src={ClockIcon} alt=""/>
                         </div>
                         <div className="card-title">Quick</div>
-                        <div className="card-text">Dedicated team to respond to your needs. We respond to your calls 24/7. Real human customer service team to answer all your questions.</div>
+                        <p className="card-text">Dedicated team to respond to your needs. We respond to your calls 24/7. Real human customer service team to answer all your questions.</p>
                     </div>
                     <div className="services-cards-card">
                         <div className="card-icon">
                             <img src={MoneyIcon} alt=""/>
                         </div>
                         <div className="card-title">Monetization</div>
-                        <div className="card-text">Solve your business problems with digital solutions tailor-made to your case. Flexible strategy that can be adjusted to optimize conversion.</div>
+                        <p className="card-text">Solve your business problems with digital solutions tailor-made to your case. Flexible strategy that can be adjusted to optimize conversion.</p>
                     </div>
                     <div className="services-cards-card">
                         <div className="card-icon">
                             <img src={DiagramIcon} alt=""/>
                         </div>
                         <div className="card-title">Flexibility</div>
-                        <div className="card-text">This icon looks like the Google Chrome icon. I don't know what to put here. If you're reading this please don't mind the random copy.</div>
+                        <p className="card-text">This icon looks like the Google Chrome icon. I don't know what to put here. If you're reading this please don't mind the random copy.</p>
                     </div>
                     <div className="services-cards-card">
                         <div className="card-icon">
                             <img src={TeamworkIcon} alt=""/>
                         </div>
                         <div className="card-title">Teamwork</div>
-                        <div className="card-text">Team work makes the dream work. What does it mean to be a team player for you? Does it just mean to blindly follow the herd?</div>
+                        <p className="card-text">Team work makes the dream work. What does it mean to be a team player for you? Does it just mean to blindly follow the herd?</p>
                     </div>
                 </div>
             </div>

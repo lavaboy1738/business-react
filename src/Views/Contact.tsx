@@ -5,11 +5,12 @@ import {Key} from "../Credentials";
 const ContactStyle = styled.div`
     padding: 2rem 5vw;
     color: #333;
+    height: 90vh;
         .contact-header{
             display: flex;
             align-items: center;
             width: 100%;
-            height: 40vh;
+            height: 40%;
             .header-content{
                 .title{
                     font-family: Jakarta-display;
@@ -24,7 +25,7 @@ const ContactStyle = styled.div`
             }
         }
         .contact-content{
-            height: 40vh;
+            height: 60%;
             display: flex;
             .address{
                 font-family: Jakarta-text;

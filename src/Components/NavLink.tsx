@@ -9,7 +9,7 @@ const NavLinkStyle = styled.li`
     padding: 0.2rem 0;
     position: relative;
     overflow: hidden;
-    cursor: pointer;
+    /* cursor: pointer; */
     &::before{
         content: "";
         position: absolute;

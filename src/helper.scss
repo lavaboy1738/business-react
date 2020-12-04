@@ -28,6 +28,10 @@
     box-sizing: border-box;
 }
 
+p{
+    line-height: 160%;
+}
+
 button{
     outline: none;
     background: transparent;
@@ -49,5 +53,5 @@ body::-webkit-scrollbar{
 body{
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
-    background-color: rgba(250,250,250, 1);
+    background-color: rgba(253,253,253, 1);
 }

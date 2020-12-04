@@ -23,11 +23,10 @@ const NavStyles = styled.div`
 `
 
 const Nav = () => {
-    const [activePage, setActivePage] = useState("");
 
     return(
         <NavStyles>
-            <h1><Link to="/" onClick={()=>{setActivePage("/home")}}>DotCom</Link></h1>
+            <h1><Link to="/">DotCom</Link></h1>
             <ul>
                 <NavLink text="About Us" url="/about" />
                 <NavLink text="Works" url="/works" />
