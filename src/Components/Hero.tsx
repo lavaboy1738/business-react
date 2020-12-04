@@ -2,6 +2,7 @@ import React from "react";
 import HeroImage from "../assets/images/Hero.png";
 import styled from "styled-components";
 import {DefaultButton} from "./DefaultButton";
+import {motion} from "framer-motion";
 
 const HeroStyles = styled.div`
     min-height: 90vh;
@@ -61,28 +62,111 @@ const HeroStyles = styled.div`
 `
 
 const Hero = () =>{
+    const titleAnimation = {
+        hidden: {
+            opacity: 0,
+            y: 100
+        },
+        show: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 1.5,
+                ease: "easeOut"
+            }
+        }
+    }
+
+    const lineContainerAnimation = {
+        hidden: {
+            x: 100
+        },
+        show:{
+            x: 0,
+            transition: {
+                duration: 1.5
+            }
+        }
+    }
+
+    const staggerChildrenAnimation = {
+        hidden: {
+        },
+        show: {
+            transition: {
+                duration: 0.75, 
+                ease: "easeOut",
+                staggerChildren: 0.3
+            }
+        }
+    }
+
+    const pictureAnimation = {
+        hidden: {
+            opacity: 0,
+            x: 200,
+            scale: 0.9
+        },
+        show: {
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            transition: {
+                duration: 1,
+                delay: 2,
+                type: "intertia"
+            }
+        }
+    }
+
     return(
         <HeroStyles>
-            <div className="hero-description">
-                <div className="title">
-                    <div className="hide">
-                        <h2>We Solve Business Problems</h2>
-                    </div>
-                    <div className="hide">
-                        <h2>with <span>Creative and Innovative</span></h2>
-                    </div>
-                    <div className="hide">
-                        <h2>Digital Solutions</h2>
-                    </div>
-                </div>
-                <div className="subtitle">
+            <motion.div 
+            variants={staggerChildrenAnimation}
+            initial="hidden"
+            animate="show"
+            className="hero-description">
+                <motion.div className="title">
+                    <motion.div 
+                    variants={lineContainerAnimation}
+                    className="hide">
+                        <motion.h2 
+                        variants={titleAnimation}
+                         >We Solve Business Problems</motion.h2>
+                    </motion.div>
+                    <motion.div 
+                    variants={lineContainerAnimation}
+                    className="hide">
+                        <motion.h2
+                        variants={titleAnimation}
+                        >with <span>Creative and Innovative</span></motion.h2>
+                    </motion.div>
+                    <motion.div 
+                    variants={lineContainerAnimation}
+                    className="hide">
+                        <motion.h2
+                        variants={titleAnimation}
+                        >Digital Solutions</motion.h2>
+                    </motion.div>
+                </motion.div>
+                <motion.div 
+                variants={titleAnimation}
+                className="subtitle">
                     <p>I don't know what to put here. I write good copies but the purpose of this project is to build a business website that looks legit.</p>
-                </div>
-                <DefaultButton text="Learn More" url="/about" />
-            </div>
-            <div className="hero-photo">
+                </motion.div>
+                <motion.div
+                    variants={titleAnimation}
+                >
+                    <DefaultButton text="Learn More" url="/about" />
+                </motion.div>
+            </motion.div>
+            <motion.div 
+            variants={pictureAnimation}
+            initial= "hidden"
+            animate="show"
+            className="hero-photo">
                 <img src={HeroImage} alt=""/>
-            </div>
+            </motion.div>
 
         </HeroStyles>
     )
