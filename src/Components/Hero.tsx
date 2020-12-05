@@ -4,7 +4,7 @@ import styled from "styled-components";
 import {DefaultButton} from "./DefaultButton";
 import {motion} from "framer-motion";
 
-const HeroStyles = styled.div`
+const HeroStyles = styled(motion.div)`
     min-height: 90vh;
     width: 90%;
     display: flex;
@@ -94,9 +94,7 @@ const Hero = () =>{
         },
         show: {
             transition: {
-                duration: 0.75, 
-                ease: "easeOut",
-                staggerChildren: 0.3
+                staggerChildren: 0.4
             }
         }
     }
@@ -105,7 +103,7 @@ const Hero = () =>{
         hidden: {
             opacity: 0,
             x: 200,
-            scale: 0.9
+            scale: 0.9,
         },
         show: {
             opacity: 1,
@@ -113,14 +111,14 @@ const Hero = () =>{
             scale: 1,
             transition: {
                 duration: 1,
-                delay: 2,
-                type: "intertia"
+                delay: 1.8,
+                type: "Inertia",
             }
         }
     }
 
     return(
-        <HeroStyles>
+        <HeroStyles variants={staggerChildrenAnimation} initial="hidden" animate="show">
             <motion.div 
             variants={staggerChildrenAnimation}
             initial="hidden"
@@ -167,7 +165,6 @@ const Hero = () =>{
             className="hero-photo">
                 <img src={HeroImage} alt=""/>
             </motion.div>
-
         </HeroStyles>
     )
 }
