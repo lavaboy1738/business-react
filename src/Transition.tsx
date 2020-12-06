@@ -15,12 +15,11 @@ export const Transition = {
     },
     exit: {
         opacity: 0,
-        y: "-100%",
-        scaleX: 0.4,
+        y: "-150%",
+        scaleX: 0,
         transition: {
-            duration: 1.5,
-            ease: "anticipate",
-            delay: 0.2,
+            duration: 0.5,
+            ease: "easeIn",
         }
     }
 }
@@ -38,12 +37,11 @@ export const HomeTransition = {
     },
     exit: {
         opacity: 0,
-        y: "-100%",
-        scaleX: 0.4,
+        y: "-150%",
+        scaleX: 0,
         transition: {
-            duration: 1.5,
-            ease: "anticipate",
-            delay: 0.2,
+            duration: 0.5,
+            ease: "easeIn",
         }
     }
 }
