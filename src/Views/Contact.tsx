@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import {Key} from "../Credentials";
+import {motion} from "framer-motion";
+import {Transition} from "../Transition";
+import {Footer} from "../Components/Footer";
 
-const ContactStyle = styled.div`
+const ContactStyle = styled(motion.div)`
     padding: 2rem 5vw;
     color: #333;
     height: 90vh;
@@ -52,7 +55,8 @@ const ContactStyle = styled.div`
 const Contact = () =>{
 
     return(
-        <ContactStyle>
+        <>
+        <ContactStyle variants={Transition} initial="hidden" animate="show" exit="exit">
             <div className="contact-header">
                 <div className="header-content">
                 <div className="title">Holler At Us</div>
@@ -83,6 +87,8 @@ const Contact = () =>{
                 </div>
             </div>
         </ContactStyle>
+        <Footer/>
+        </>
     )
 }
 

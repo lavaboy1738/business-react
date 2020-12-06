@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import {motion} from "framer-motion";
+import {Transition} from "../Transition";
 
-const NotFoundStyle = styled.div`
+const NotFoundStyle = styled(motion.div)`
     height: 90vh;
     display: flex;
     justify-content: center;
@@ -63,7 +64,7 @@ const bottomAnimation = {
 
 const NotFound = ()=>{
     return (
-        <NotFoundStyle>
+        <NotFoundStyle variants={Transition} initial="hidden" animate="show" exit="exit">
             <motion.div className="wrapper"
             variants={staggerChildren}
             initial="hidden"

@@ -3,9 +3,12 @@ import styled from "styled-components";
 import AboutHeader from "../assets/images/about-header.jpg";
 import {LeadershipCard} from "../Components/LeadershipCard";
 import {LeadershipData} from "../data/LeadershipData";
+import {motion} from "framer-motion";
+import {Transition} from "../Transition";
+import {Footer} from "../Components/Footer";
 
 
-const AboutStyle = styled.div`
+const AboutStyle = styled(motion.div)`
     padding: 2rem 5vw;
     color: #333;
 
@@ -60,7 +63,8 @@ const AboutStyle = styled.div`
 
 const About = ()=>{
     return (
-        <AboutStyle>
+        <>
+        <AboutStyle variants={Transition}  initial="hidden" animate="show" exit="exit">
             <section className="header">
                 <div className="title">About Us</div>
                 <div className="subtitle">We get it done, by any means necessary.</div>
@@ -102,6 +106,8 @@ const About = ()=>{
                 </div>
             </section>
         </AboutStyle>
+        <Footer/>
+        </>
     )
 }
 

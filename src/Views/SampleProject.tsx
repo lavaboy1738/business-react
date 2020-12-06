@@ -5,8 +5,11 @@ import SampleSide from "../assets/images/sample-side.jpg";
 import Sample1 from "../assets/images/sample-1.jpg";
 import Sample2 from "../assets/images/sample-2.jpg";
 import Sample3 from "../assets/images/sample-3.jpg";
+import {motion} from "framer-motion";
+import {Transition} from "../Transition";
+import {Footer} from "../Components/Footer";
 
-const SampleProjectStyled = styled.div`
+const SampleProjectStyled = styled(motion.div)`
     padding: 2rem 5vw;
     color: #333;
     section{
@@ -81,7 +84,8 @@ const SampleProjectStyled = styled.div`
 
 const SampleProject = ()=>{
     return (
-        <SampleProjectStyled>
+        <>
+        <SampleProjectStyled variants={Transition} initial="hidden" animate="show" exit="exit">
             <section className="project-header">
                 <div className="title">Sample Project</div>
                 <div className="subtitle">This is just a template of a sample project.</div>
@@ -127,6 +131,8 @@ const SampleProject = ()=>{
             </section>
 
         </SampleProjectStyled>
+        <Footer/>
+        </>
     )
 }
 

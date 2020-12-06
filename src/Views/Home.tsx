@@ -6,8 +6,12 @@ import {Accordion} from "../Components/Accordion";
 import {WorkContent} from "../Components/WorkContent";
 import {ArrangedProjects} from "../data/ProjectsData";
 import {DefaultButton} from "../Components/DefaultButton";
+import {motion} from "framer-motion";
+import {HomeTransition} from "../Transition";
+import {Footer} from "../Components/Footer";
 
-const HomeStyles = styled.div`
+
+const HomeStyles = styled(motion.div)`
     color: #333;
     width: 100%;
     display: flex;
@@ -36,7 +40,8 @@ const HomeStyles = styled.div`
 
 const Home = () =>{
     return(
-        <HomeStyles>
+        <>
+        <HomeStyles variants={HomeTransition} initial="hidden" animate="show" exit="exit">
             <Hero/>
             <Services/>
             <div className="wrapper">
@@ -49,6 +54,8 @@ const Home = () =>{
             </div>
             <Accordion/>
         </HomeStyles>
+        <Footer/>
+        </>
     )
 }
 
