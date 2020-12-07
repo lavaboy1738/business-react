@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import ClockIcon from "../assets/images/clock.svg";
 import MoneyIcon from "../assets/images/money.svg";
 import TeamworkIcon from "../assets/images/teamwork.svg";
 import DiagramIcon from "../assets/images/diaphragm.svg";
 import Skate from "../assets/images/Skate.png";
+import {motion, useAnimation} from "framer-motion";
 import {Wave} from "./Wave";
 import styled from "styled-components";
+import {useAnimations} from "../Hooks/useAnimations";
+import { useInView } from "react-intersection-observer";
 
-const ServicesStyles = styled.div`
+const ServicesStyles = styled(motion.div)`
     width: 90%;
     display: flex;
     justify-content: space-between;
@@ -60,15 +63,41 @@ const ServicesStyles = styled.div`
 `
 
 const Services = () =>{
+    const [element, inView] = useInView({threshold: 0.3})
+    const controls = useAnimation();
+    const [staggerChildrenAnimation, pictureAnimation, titleAnimation] = useAnimations();
+    let count = useRef(0);
+    useEffect(()=>{
+        if(count.current<3){
+            if(inView){
+                controls.start("show")
+            }else{
+                controls.start("hidden")
+            }
+        }
+        count.current+=1;
+    })
+
     return(
-        <ServicesStyles>
-            <div className="services-left">
+        <ServicesStyles 
+            variants={staggerChildrenAnimation}
+            initial="hidden"
+            ref={element}
+            animate={controls}
+        >
+            <motion.div  
+            variants={pictureAnimation}
+            className="services-left">
                 <img src={Skate} alt=""/>
-            </div>
-            <div className="services-right">
-                <div className="services-description">
+            </motion.div>
+            <motion.div 
+            variants={staggerChildrenAnimation}
+            className="services-right">
+                <motion.div
+                variants={titleAnimation}
+                className="services-description">
                     <h2>Quality Services, Timely Turnaround</h2>
-                </div>
+                </motion.div>
                 <div className="services-cards">
                     <div className="services-cards-card">
                         <div className="card-icon">
@@ -99,7 +128,7 @@ const Services = () =>{
                         <p className="card-text">Team work makes the dream work. What does it mean to be a team player for you? Does it just mean to blindly follow the herd?</p>
                     </div>
                 </div>
-            </div>
+            </motion.div>
             <Wave/>
         </ServicesStyles>
     )

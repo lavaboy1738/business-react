@@ -32,7 +32,7 @@ const Accordion = () =>{
             <div className="accordion-content">
                 {AccordionData.map((item)=>{
                     return(
-                        <AccordionItem 
+                        <AccordionItem key={item.itemID}
                             question={item.question}
                             answer={item.answer}
                             itemID={item.itemID}

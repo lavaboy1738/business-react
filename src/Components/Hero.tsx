@@ -3,6 +3,7 @@ import HeroImage from "../assets/images/Hero.png";
 import styled from "styled-components";
 import {DefaultButton} from "./DefaultButton";
 import {motion} from "framer-motion";
+import {useAnimations} from "../Hooks/useAnimations";
 
 const HeroStyles = styled(motion.div)`
     min-height: 90vh;
@@ -62,60 +63,7 @@ const HeroStyles = styled(motion.div)`
 `
 
 const Hero = () =>{
-    const titleAnimation = {
-        hidden: {
-            opacity: 0,
-            y: 100
-        },
-        show: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 1.5,
-                ease: "easeOut"
-            }
-        }
-    }
-
-    const lineContainerAnimation = {
-        hidden: {
-            x: 100
-        },
-        show:{
-            x: 0,
-            transition: {
-                duration: 1.5
-            }
-        }
-    }
-
-    const staggerChildrenAnimation = {
-        hidden: {
-        },
-        show: {
-            transition: {
-                staggerChildren: 0.4
-            }
-        }
-    }
-
-    const pictureAnimation = {
-        hidden: {
-            opacity: 0,
-            x: 200,
-            scale: 0.9,
-        },
-        show: {
-            opacity: 1,
-            x: 0,
-            scale: 1,
-            transition: {
-                duration: 1,
-                delay: 1.8,
-                type: "Inertia",
-            }
-        }
-    }
+    const [staggerChildrenAnimation, pictureAnimation, titleAnimation, lineContainerAnimation] = useAnimations();
 
     return(
         <HeroStyles variants={staggerChildrenAnimation} initial="hidden" animate="show">
