@@ -5,8 +5,6 @@ import "./helper.scss";
 import reportWebVitals from './reportWebVitals';
 import {
   BrowserRouter,
-  Switch,
-  Route, useLocation
 } from "react-router-dom";
 
 ReactDOM.render(

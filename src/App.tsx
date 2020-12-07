@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {Home} from "./Views/Home";
 import {About} from "./Views/About";
 import {Nav} from "./Components/Nav";
@@ -10,9 +10,8 @@ import ScrollToTop from "./Components/ScrollToTop";
 import {AnimatePresence} from "framer-motion";
 
 import {
-  BrowserRouter as Router,
   Switch,
-  Route, useLocation, useHistory
+  Route, useLocation,
 } from "react-router-dom";
 
 function App(){
