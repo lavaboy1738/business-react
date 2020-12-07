@@ -4,6 +4,7 @@ import MoneyIcon from "../assets/images/money.svg";
 import TeamworkIcon from "../assets/images/teamwork.svg";
 import DiagramIcon from "../assets/images/diaphragm.svg";
 import Skate from "../assets/images/Skate.png";
+import {Wave} from "./Wave";
 import styled from "styled-components";
 
 const ServicesStyles = styled.div`
@@ -13,6 +14,7 @@ const ServicesStyles = styled.div`
     align-items: center;
     min-height: 90vh;
     color: #333;
+    position: relative;
     .services-left{
         width: 45%;
         img{
@@ -98,6 +100,7 @@ const Services = () =>{
                     </div>
                 </div>
             </div>
+            <Wave/>
         </ServicesStyles>
     )
 }
