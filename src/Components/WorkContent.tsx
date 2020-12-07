@@ -3,6 +3,8 @@ import styled from "styled-components";
 import {Project} from "../data/ProjectsData";
 import {WorksProject} from "./WorksProject";
 import {Link} from "react-router-dom";
+import {useAnimations} from "../Hooks/useAnimations";
+import {motion} from "framer-motion";
 
 const WorkContentStyle = styled.div`
         display: flex;
@@ -29,11 +31,14 @@ const WorkContentStyle = styled.div`
 type Prop = {projectsArr: Project[][]}
 
 const WorkContent = (props: Prop) => {
+    const [slowStaggerChildrenAnimation] = useAnimations();
     return(
         <WorkContentStyle>
             {
                 props.projectsArr.map((arr, index)=>{
-                    return (<div className = "projects-container" key={index}>
+                    return (<motion.div 
+                        variants={slowStaggerChildrenAnimation}
+                    className = "projects-container" key={index}>
                         {arr.map((project)=>{
                             return (<Link to="/works/sample-project" key={project.id}>
                                 <WorksProject title={project.title} color={project.color} url={project.url}
@@ -41,7 +46,7 @@ const WorkContent = (props: Prop) => {
                                 />
                             </Link>)
                         })}
-                    </div>)
+                    </motion.div>)
                 })
             }
         </WorkContentStyle>

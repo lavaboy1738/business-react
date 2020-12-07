@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import {useAnimations} from "../Hooks/useAnimations";
+import {motion} from "framer-motion";
 
-const WorksProjectStyles = styled.div`
+const WorksProjectStyles = styled(motion.div)`
     width: 100%;
     position: relative;
     transition: 0.2s all ease;
@@ -58,8 +60,11 @@ type Prop = {
 }
 
 const WorksProject = (props: Prop) => {
+    const [revealAnimation] = useAnimations();
     return(
-        <WorksProjectStyles>
+        <WorksProjectStyles
+        variants={revealAnimation}
+        >
             <img src={props.url} alt=""/>
             <div className="cover" style={{backgroundColor: props.color}}>
                 <div className="cover-title">{props.title}</div>

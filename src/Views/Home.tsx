@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
+import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import {Hero} from "../Components/Hero";
 import {Services} from "../Components/Services";
@@ -6,9 +7,11 @@ import {Accordion} from "../Components/Accordion";
 import {WorkContent} from "../Components/WorkContent";
 import {ArrangedProjects} from "../data/ProjectsData";
 import {DefaultButton} from "../Components/DefaultButton";
-import {motion} from "framer-motion";
+import {motion, useAnimation} from "framer-motion";
 import {HomeTransition} from "../Transition";
 import {Footer} from "../Components/Footer";
+import {useAnimations} from "../Hooks/useAnimations";
+import {Homework} from "../Components/Homework";
 
 
 const HomeStyles = styled(motion.div)`
@@ -17,24 +20,6 @@ const HomeStyles = styled(motion.div)`
     display: flex;
     flex-direction: column;
     align-items: center;
-    .wrapper{
-        padding: 2rem 5vw;
-        .title{
-            font-family: Jakarta-display;
-            font-size: 2rem;
-            font-weight: 600;
-        }
-        .subtitle{
-            font-family: Jakarta-text;
-            font-size: 1.5rem;
-            font-weight: 200;
-            margin-bottom: 1rem;
-        }
-        .button-wrapper{
-            padding: 2rem;
-            text-align:center;
-        }
-    }
 `
 
 
@@ -44,14 +29,7 @@ const Home = () =>{
         <HomeStyles variants={HomeTransition} initial="hidden" animate="show" exit="exit">
             <Hero/>
             <Services/>
-            <div className="wrapper">
-                <div className="title">Works</div>
-                <div className="subtitle">Look around, you'll be surprised.</div>
-                <WorkContent projectsArr={ArrangedProjects.slice(0,3)}/>
-                <div className="button-wrapper">
-                    <DefaultButton text="More Works" url="/works" />
-                </div>
-            </div>
+            <Homework/>
             <Accordion/>
         </HomeStyles>
         <Footer/>

@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import {motion} from "framer-motion";
+import {useAnimations} from "../Hooks/useAnimations";
 
-const AccordionItemStyle = styled.div`
+const AccordionItemStyle = styled(motion.div)`
 padding: 0.5rem 0;
 transition: 0.5s all ease;
 cursor: pointer;
@@ -48,8 +50,11 @@ type Prop = {
 
 const AccordionItem = (props: Prop) => {
     const {itemID} = props;
+    const [revealAnimation] = useAnimations();
     return(
-    <AccordionItemStyle className="question" onClick={()=>{props.onChange(props.itemID)}} >
+    <AccordionItemStyle 
+    variants={revealAnimation}
+    className="question" onClick={()=>{props.onChange(props.itemID)}} >
         <h4>{props.question}</h4>
         <div className={props.openedID === itemID? "answer open": "answer"}>
             <p>{props.answer}</p>

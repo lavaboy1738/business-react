@@ -11,10 +11,22 @@ export const useAnimations = ()=> {
         }
     }
 
+    const slowStaggerChildrenAnimation = {
+        hidden: {
+            opacity: 0
+        },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.7
+            }
+        }
+    }
+
     const pictureAnimation = {
         hidden: {
             opacity: 0,
-            x: 200,
+            x: -200,
             scale: 0.9,
         },
         show: {
@@ -24,6 +36,21 @@ export const useAnimations = ()=> {
             transition: {
                 duration: 1,
                 delay: 1.8,
+                type: "Inertia",
+            }
+        }
+    }
+
+    const revealAnimation = {
+        hidden: {
+            opacity: 0,
+            scale: 0.9,
+        },
+        show: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                duration: 1,
                 type: "Inertia",
             }
         }
@@ -56,6 +83,7 @@ export const useAnimations = ()=> {
         }
     }
 
-    return [staggerChildrenAnimation, pictureAnimation, titleAnimation, lineContainerAnimation]
+    return [staggerChildrenAnimation, pictureAnimation, titleAnimation, 
+        lineContainerAnimation, revealAnimation, slowStaggerChildrenAnimation]
 }
 
