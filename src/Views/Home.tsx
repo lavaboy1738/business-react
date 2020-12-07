@@ -25,15 +25,12 @@ const HomeStyles = styled(motion.div)`
 
 const Home = () =>{
     return(
-        <>
         <HomeStyles variants={HomeTransition} initial="hidden" animate="show" exit="exit">
             <Hero/>
             <Services/>
             <Homework/>
             <Accordion/>
         </HomeStyles>
-        <Footer/>
-        </>
     )
 }
 

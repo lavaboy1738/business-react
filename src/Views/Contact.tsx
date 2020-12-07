@@ -55,7 +55,6 @@ const ContactStyle = styled(motion.div)`
 const Contact = () =>{
 
     return(
-        <>
         <ContactStyle variants={Transition} initial="hidden" animate="show" exit="exit">
             <div className="contact-header">
                 <div className="header-content">
@@ -87,8 +86,6 @@ const Contact = () =>{
                 </div>
             </div>
         </ContactStyle>
-        <Footer/>
-        </>
     )
 }
 

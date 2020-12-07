@@ -63,7 +63,6 @@ const AboutStyle = styled(motion.div)`
 
 const About = ()=>{
     return (
-        <>
         <AboutStyle variants={Transition}  initial="hidden" animate="show" exit="exit">
             <section className="header">
                 <div className="title">About Us</div>
@@ -106,8 +105,6 @@ const About = ()=>{
                 </div>
             </section>
         </AboutStyle>
-        <Footer/>
-        </>
     )
 }
 

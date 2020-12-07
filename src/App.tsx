@@ -8,6 +8,7 @@ import {SampleProject} from "./Views/SampleProject";
 import {NotFound} from "./Views/NotFound";
 import ScrollToTop from "./Components/ScrollToTop";
 import {AnimatePresence} from "framer-motion";
+import {Footer} from "./Components/Footer";
 
 import {
   Switch,
@@ -43,6 +44,7 @@ function App(){
               </Route>
             </Switch>
           </AnimatePresence>
+          <Footer/>
     </div>
   );
 }

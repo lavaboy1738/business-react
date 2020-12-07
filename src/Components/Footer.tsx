@@ -69,7 +69,8 @@ const Footer = () =>{
     const externalLink = "https://www.youtube.com/watch?v=oHg5SJYRHA0";
 
     return(
-        <FooterStyle>
+        <FooterStyle
+        >
             <div className="footer-left">
                 <div className="footer-left-top">Get in Touch</div>
                 <div className="footer-left-bottom">

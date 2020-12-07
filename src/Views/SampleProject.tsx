@@ -84,7 +84,6 @@ const SampleProjectStyled = styled(motion.div)`
 
 const SampleProject = ()=>{
     return (
-        <>
         <SampleProjectStyled variants={Transition} initial="hidden" animate="show" exit="exit">
             <section className="project-header">
                 <div className="title">Sample Project</div>
@@ -129,10 +128,7 @@ const SampleProject = ()=>{
                     </div>
                 </div>
             </section>
-
         </SampleProjectStyled>
-        <Footer/>
-        </>
     )
 }
 
