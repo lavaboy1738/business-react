@@ -9,7 +9,6 @@ const WorksProjectStyles = styled(motion.div)`
     position: relative;
     transition: 0.2s all ease;
     overflow: hidden;
-
     img{
         width: 100%;
         display: block;
