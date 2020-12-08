@@ -21,12 +21,15 @@ const NavStyles = styled.div`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        @media (max-width: 420px) {
+        @media only screen and (min-width: 320px) and (max-width: 700px) {
             display: none;
         }
     }
     i{
         font-size: 3rem;
+        @media (min-width: 768px) {
+            display: none;
+        }
     }
     .mobile-menu{
         position: absolute;
@@ -41,7 +44,7 @@ const NavStyles = styled.div`
         justify-content: center;
         background-color: #222;
         transition: 0.7s all ease-in-out;
-        @media (min-width: 420px) {
+        @media (min-width: 768px) {
             display: none;
         }
         &.active{
