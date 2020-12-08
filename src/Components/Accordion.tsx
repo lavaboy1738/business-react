@@ -27,7 +27,7 @@ width: 90%;
 const Accordion = () =>{
     const [openedID, setOpenedID] =useState(0);
     const {slowStaggerChildrenAnimation, staggerChildrenAnimation, titleAnimation} = useAnimations();
-    const {element, controls} = useScroll();
+    const {element, controls} = useScroll(0.2);
 
     return(
         <AccordionStyles
@@ -47,7 +47,7 @@ const Accordion = () =>{
                 className="blue">We Got Answers.</motion.h2>
             </motion.div>
             <motion.div 
-            variants={slowStaggerChildrenAnimation}
+            variants={staggerChildrenAnimation}
             className="accordion-content">
                 {AccordionData.map((item)=>{
                     return(

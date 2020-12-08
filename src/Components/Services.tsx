@@ -61,7 +61,7 @@ const ServicesStyles = styled(motion.div)`
 `
 
 const Services = () =>{
-    const {element, controls} = useScroll();
+    const {element, controls} = useScroll(0.2);
     const {staggerChildrenAnimation, pictureAnimation, titleAnimation} = useAnimations();
 
     return(

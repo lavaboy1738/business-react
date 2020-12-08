@@ -21,8 +21,11 @@ const NavStyles = styled.div`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        @media only screen and (min-width: 320px) and (max-width: 700px) {
+        @media (max-width: 600px) {
             display: none;
+        }
+        @media (min-width: 600px) and (max-width: 1024px){
+            width: 50%;
         }
     }
     i{

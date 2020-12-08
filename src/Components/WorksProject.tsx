@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import {useAnimations} from "../Hooks/useAnimations";
 import {motion} from "framer-motion";
-import {useScroll} from "../Hooks/useScroll";
 
 const WorksProjectStyles = styled(motion.div)`
     width: 100%;
@@ -61,14 +60,10 @@ type Prop = {
 }
 
 const WorksProject = (props: Prop) => {
-    const {element, controls} = useScroll();
     const {revealAnimation} = useAnimations();
     return(
         <WorksProjectStyles
         variants={revealAnimation}
-        initial="hidden"
-        ref={element}
-        animate={controls}
         >
             <img src={props.url} alt=""/>
             <div className="cover" style={{backgroundColor: props.color}}>

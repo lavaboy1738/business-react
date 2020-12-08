@@ -2,19 +2,19 @@ import {useEffect, useRef} from "react";
 import { useInView } from "react-intersection-observer";
 import {useAnimation} from "framer-motion";
 
-export const useScroll = () => {
-    const [element, inView] = useInView({threshold: 0.2})
+export const useScroll = (threshold: number) => {
+    const [element, inView] = useInView({threshold})
     const controls = useAnimation();
-    let count = useRef(0);
+    const count = useRef(false);
     useEffect(()=>{
-        if(count.current<3){
+        if(!count.current){
             if(inView){
                 controls.start("show")
+                count.current = true;
             }else{
                 controls.start("hidden")
             }
         }
-        count.current+=1;
     })
     return {element, controls}
 }

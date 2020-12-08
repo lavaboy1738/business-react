@@ -4,8 +4,6 @@ import {motion} from "framer-motion";
 import {WorkContent} from "./WorkContent";
 import {DefaultButton} from "./DefaultButton";
 import {ArrangedProjects} from "../data/ProjectsData";
-import {useAnimations} from "../Hooks/useAnimations";
-import {useScroll} from "../Hooks/useScroll";
 
 const HomeworkStyle = styled.div`
     padding: 2rem 5vw;
