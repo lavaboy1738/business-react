@@ -44,14 +44,14 @@ export const useAnimations = ()=> {
     const revealAnimation = {
         hidden: {
             opacity: 0,
-            scale: 0.9,
+            scale: 0.4,
         },
         show: {
             opacity: 1,
             scale: 1,
             transition: {
-                duration: 0.5,
-                type: "Inertia",
+                duration: 0.7,
+                ease: "circOut",
             }
         }
     }

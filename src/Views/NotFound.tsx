@@ -63,9 +63,9 @@ const bottomAnimation = {
 }
 
 const NotFound = ()=>{
-    const {Transition} = useTransitions();
+    const {ContactTransition} = useTransitions();
     return (
-        <NotFoundStyle variants={Transition} initial="hidden" animate="show" exit="exit">
+        <NotFoundStyle variants={ContactTransition} initial="hidden" animate="show" exit="exit">
             <motion.div className="wrapper"
             variants={staggerChildren}
             initial="hidden"

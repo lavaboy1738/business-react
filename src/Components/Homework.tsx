@@ -7,7 +7,7 @@ import {ArrangedProjects} from "../data/ProjectsData";
 import {useAnimations} from "../Hooks/useAnimations";
 import {useScroll} from "../Hooks/useScroll";
 
-const HomeworkStyle = styled(motion.div)`
+const HomeworkStyle = styled.div`
     padding: 2rem 5vw;
     .title{
         font-family: Jakarta-display;
@@ -27,15 +27,8 @@ const HomeworkStyle = styled(motion.div)`
 `
 
 const Homework = ()=>{
-    const {staggerChildrenAnimation} = useAnimations();
-    const {element, controls} = useScroll();
-
     return(
         <HomeworkStyle className="wrapper"
-        variants={staggerChildrenAnimation}
-        initial="hidden"
-        ref={element}
-        animate={controls}
         >
             <motion.div className="title">Works</motion.div>
             <motion.div className="subtitle">Look around, you'll be surprised.</motion.div>
