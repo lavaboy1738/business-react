@@ -12,13 +12,22 @@ const HeroStyles = styled(motion.div)`
     align-items: center;
     justify-content: space-between;
     color: #333;
+    @media (max-width: 1200px) {
+        flex-wrap: wrap;
+    }
     .hero-description{
         width: 50%;
+        @media (max-width: 1200px) {
+            width: 100%;
+        }
         .title{
             font-family: Jakarta-display;
             font-weight: bold;
             font-size: 1.6rem;
             margin-bottom: 1.2rem;
+            @media (max-width: 400px) {
+                font-size: 1.1rem;
+            }
             .hide{
                 overflow: hidden;
                 span{
@@ -55,6 +64,9 @@ const HeroStyles = styled(motion.div)`
     }
     .hero-photo{
         width: 45%;
+        @media (max-width: 1200px) {
+            display: none;
+        }
         overflow: hidden;
         img{
             width: 100%;
@@ -63,7 +75,7 @@ const HeroStyles = styled(motion.div)`
 `
 
 const Hero = () =>{
-    const [staggerChildrenAnimation, pictureAnimation, titleAnimation, lineContainerAnimation] = useAnimations();
+    const {staggerChildrenAnimation, pictureAnimation, titleAnimation, lineContainerAnimation} = useAnimations();
 
     return(
         <HeroStyles variants={staggerChildrenAnimation} initial="hidden" animate="show">

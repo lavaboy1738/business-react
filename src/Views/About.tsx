@@ -4,8 +4,7 @@ import AboutHeader from "../assets/images/about-header.jpg";
 import {LeadershipCard} from "../Components/LeadershipCard";
 import {LeadershipData} from "../data/LeadershipData";
 import {motion} from "framer-motion";
-import {Transition} from "../Transition";
-import {Footer} from "../Components/Footer";
+import {useTransitions} from "../Hooks/useTransitions";
 
 
 const AboutStyle = styled(motion.div)`
@@ -55,6 +54,9 @@ const AboutStyle = styled(motion.div)`
             .leader{
                 width: 30%;
                 margin-bottom: 3rem;
+                @media (max-width: 420px) {
+                    width: 100%;
+                }
             }
         }
     }
@@ -62,6 +64,7 @@ const AboutStyle = styled(motion.div)`
 `
 
 const About = ()=>{
+    const {Transition} = useTransitions();
     return (
         <AboutStyle variants={Transition}  initial="hidden" animate="show" exit="exit">
             <section className="header">
@@ -87,7 +90,7 @@ const About = ()=>{
             </section>
             <section className="leadership">
                 <div className="title">Leadership</div>
-                <div className="subtitle">They ask to see the boss, so here they are.</div>
+                <div className="subtitle">They don't bite. Relax, kid.</div>
                 <div className="leadership-content">
                     {LeadershipData.map((card)=>{
                         return(

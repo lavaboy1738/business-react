@@ -18,7 +18,7 @@ export const useAnimations = ()=> {
         show: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.7
+                staggerChildren: 0.6
             }
         }
     }
@@ -50,7 +50,7 @@ export const useAnimations = ()=> {
             opacity: 1,
             scale: 1,
             transition: {
-                duration: 1,
+                duration: 0.5,
                 type: "Inertia",
             }
         }
@@ -65,7 +65,7 @@ export const useAnimations = ()=> {
             opacity: 1,
             y: 0,
             transition: {
-                duration: 1.5,
+                duration: 0.5,
                 ease: "easeOut"
             }
         }
@@ -83,7 +83,7 @@ export const useAnimations = ()=> {
         }
     }
 
-    return [staggerChildrenAnimation, pictureAnimation, titleAnimation, 
-        lineContainerAnimation, revealAnimation, slowStaggerChildrenAnimation]
+    return {staggerChildrenAnimation, pictureAnimation, titleAnimation, 
+        lineContainerAnimation, revealAnimation, slowStaggerChildrenAnimation}
 }
 

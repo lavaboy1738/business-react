@@ -50,7 +50,7 @@ type Prop = {
 
 const AccordionItem = (props: Prop) => {
     const {itemID} = props;
-    const [revealAnimation] = useAnimations();
+    const {revealAnimation} = useAnimations();
     return(
     <AccordionItemStyle 
     variants={revealAnimation}

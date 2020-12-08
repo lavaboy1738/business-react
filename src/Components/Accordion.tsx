@@ -1,10 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import {AccordionItem} from "./AccordionItem";
 import {AccordionData} from "../data/AccordionData";
-import { useInView } from "react-intersection-observer";
 import {useAnimations} from "../Hooks/useAnimations";
-import {motion, useAnimation} from "framer-motion";
+import {motion} from "framer-motion";
+import {useScroll} from "../Hooks/useScroll";
 
 const AccordionStyles = styled(motion.div)`
 width: 90%;
@@ -26,20 +26,9 @@ width: 90%;
 
 const Accordion = () =>{
     const [openedID, setOpenedID] =useState(0);
-    const [element, inView] = useInView({threshold: 0.3})
-    const controls = useAnimation();
-    const [slowStaggerChildrenAnimation, staggerChildrenAnimation, titleAnimation] = useAnimations();
-    let count = useRef(0);
-    useEffect(()=>{
-        if(count.current<3){
-            if(inView){
-                controls.start("show")
-            }else{
-                controls.start("hidden")
-            }
-        }
-        count.current+=1;
-    })
+    const {slowStaggerChildrenAnimation, staggerChildrenAnimation, titleAnimation} = useAnimations();
+    const {element, controls} = useScroll();
+
     return(
         <AccordionStyles
         variants={slowStaggerChildrenAnimation}
@@ -48,7 +37,7 @@ const Accordion = () =>{
         animate={controls}
         >
             <motion.div className="accordion-title"
-            variants={slowStaggerChildrenAnimation}
+            variants={staggerChildrenAnimation}
             >
                 <motion.h2
                 variants={titleAnimation}

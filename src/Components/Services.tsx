@@ -1,12 +1,12 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import Skate from "../assets/images/Skate.png";
-import {motion, useAnimation} from "framer-motion";
+import {motion} from "framer-motion";
 import {Wave} from "./Wave";
 import {ServiceCard} from "./ServiceCard";
 import {ServiceCardsData} from "../data/ServiceCardsData"
 import styled from "styled-components";
 import {useAnimations} from "../Hooks/useAnimations";
-import { useInView } from "react-intersection-observer";
+import {useScroll} from "../Hooks/useScroll";
 
 const ServicesStyles = styled(motion.div)`
     width: 90%;
@@ -16,19 +16,34 @@ const ServicesStyles = styled(motion.div)`
     min-height: 90vh;
     color: #333;
     position: relative;
+    @media (max-width: 1200px) {
+        flex-wrap: wrap;
+        min-height: unset;
+    }
     .services-left{
         width: 45%;
+        @media (max-width: 1200px) {
+            display: none;
+        }
         img{
             width: 100%;
         }
     }
     .services-right{
         width: 50%;
-        height: 75vh;
+        min-height: 75vh;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+        @media (max-width: 420px) {
+            width: 100%;
+            min-height: unset;
+        }
+        @media (max-width: 1200px) {
+            width: 100%;
+            min-height: 75vh;
+        }
         .services-description{
             font-family: Jakarta-display;
             font-weight: 600;
@@ -46,24 +61,12 @@ const ServicesStyles = styled(motion.div)`
 `
 
 const Services = () =>{
-    const [element, inView] = useInView({threshold: 0.3})
-    const controls = useAnimation();
-    const [slowStaggerChildrenAnimation, pictureAnimation, titleAnimation] = useAnimations();
-    let count = useRef(0);
-    useEffect(()=>{
-        if(count.current<3){
-            if(inView){
-                controls.start("show")
-            }else{
-                controls.start("hidden")
-            }
-        }
-        count.current+=1;
-    })
+    const {element, controls} = useScroll();
+    const {staggerChildrenAnimation, pictureAnimation, titleAnimation} = useAnimations();
 
     return(
         <ServicesStyles 
-            variants={slowStaggerChildrenAnimation}
+            variants={staggerChildrenAnimation}
             initial="hidden"
             ref={element}
             animate={controls}
@@ -74,7 +77,7 @@ const Services = () =>{
                 <img src={Skate} alt=""/>
             </motion.div>
             <motion.div 
-            variants={slowStaggerChildrenAnimation}
+            variants={staggerChildrenAnimation}
             className="services-right">
                 <motion.div
                 variants={titleAnimation}

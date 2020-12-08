@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {motion} from "framer-motion";
-import {Transition} from "../Transition";
+import {useTransitions} from "../Hooks/useTransitions";
 
 const NotFoundStyle = styled(motion.div)`
     height: 90vh;
@@ -63,6 +63,7 @@ const bottomAnimation = {
 }
 
 const NotFound = ()=>{
+    const {Transition} = useTransitions();
     return (
         <NotFoundStyle variants={Transition} initial="hidden" animate="show" exit="exit">
             <motion.div className="wrapper"

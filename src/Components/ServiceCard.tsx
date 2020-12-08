@@ -5,6 +5,15 @@ import {useAnimations} from "../Hooks/useAnimations";
 
 const ServiceCardStyle = styled(motion.div)`
 width: 45%;
+@media (max-width: 420px) {
+            width: 100%;
+            padding: 1rem 0;
+}
+    .card-icon{
+        @media (max-width: 420px) {
+            display: none;
+        }
+    }
     .card-title{
         margin-bottom: 1rem;
         margin-top:  0.5rem;
@@ -27,7 +36,7 @@ export type Prop = {
 }
 
 export const ServiceCard = (props: Prop)=>{
-    const [titleAnimation] = useAnimations();
+    const {titleAnimation} = useAnimations();
     return(
         <ServiceCardStyle 
         variants={titleAnimation}

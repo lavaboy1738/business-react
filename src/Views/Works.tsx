@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {ArrangedProjects} from "../data/ProjectsData";
 import {WorkContent} from "../Components/WorkContent";
 import {motion} from "framer-motion";
-import {Transition} from "../Transition";
+import {useTransitions} from "../Hooks/useTransitions";
 
 const WorksStyles = styled(motion.div)`
     padding: 2rem 5vw;
@@ -28,7 +28,7 @@ const WorksStyles = styled(motion.div)`
 `
 
 const Works = () =>{
-
+    const {Transition} = useTransitions();
     return(
         <WorksStyles variants={Transition} initial="hidden" animate="show" exit="exit">
             <div className="works-title">

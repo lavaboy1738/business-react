@@ -1,11 +1,11 @@
-import React, {useEffect, useRef} from "react";
+import React from "react";
 import styled from "styled-components";
-import {motion, useAnimation} from "framer-motion";
+import {motion} from "framer-motion";
 import {WorkContent} from "./WorkContent";
 import {DefaultButton} from "./DefaultButton";
 import {ArrangedProjects} from "../data/ProjectsData";
 import {useAnimations} from "../Hooks/useAnimations";
-import { useInView } from "react-intersection-observer";
+import {useScroll} from "../Hooks/useScroll";
 
 const HomeworkStyle = styled(motion.div)`
     padding: 2rem 5vw;
@@ -27,20 +27,8 @@ const HomeworkStyle = styled(motion.div)`
 `
 
 const Homework = ()=>{
-    const [element, inView] = useInView({threshold: 0.2})
-    const controls = useAnimation();
-    const [staggerChildrenAnimation] = useAnimations();
-    let count = useRef(0);
-    useEffect(()=>{
-        if(count.current<3){
-            if(inView){
-                controls.start("show")
-            }else{
-                controls.start("hidden")
-            }
-        }
-        count.current+=1;
-    })
+    const {staggerChildrenAnimation} = useAnimations();
+    const {element, controls} = useScroll();
 
     return(
         <HomeworkStyle className="wrapper"

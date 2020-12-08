@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {Key} from "../Credentials";
 import {motion} from "framer-motion";
-import {Transition} from "../Transition";
-import {Footer} from "../Components/Footer";
+import {useTransitions} from "../Hooks/useTransitions";
 
 const ContactStyle = styled(motion.div)`
     padding: 2rem 5vw;
@@ -46,6 +45,9 @@ const ContactStyle = styled(motion.div)`
                     width: 100%;
                     height: 100%;
                     border: none;
+                    @media (max-width: 420px) {
+                        display: none;
+                    }
                 }
             }
         }
@@ -53,9 +55,9 @@ const ContactStyle = styled(motion.div)`
 `
 
 const Contact = () =>{
-
+    const {ContactTransition} = useTransitions();
     return(
-        <ContactStyle variants={Transition} initial="hidden" animate="show" exit="exit">
+        <ContactStyle variants={ContactTransition} initial="hidden" animate="show" exit="exit">
             <div className="contact-header">
                 <div className="header-content">
                 <div className="title">Holler At Us</div>

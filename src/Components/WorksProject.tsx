@@ -60,7 +60,7 @@ type Prop = {
 }
 
 const WorksProject = (props: Prop) => {
-    const [revealAnimation] = useAnimations();
+    const {revealAnimation} = useAnimations();
     return(
         <WorksProjectStyles
         variants={revealAnimation}
