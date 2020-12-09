@@ -12,6 +12,7 @@ const HeroStyles = styled(motion.div)`
     align-items: center;
     justify-content: space-between;
     color: #333;
+    position: relative;
     @media (max-width: 1200px) {
         flex-wrap: wrap;
     }
@@ -64,10 +65,25 @@ const HeroStyles = styled(motion.div)`
     }
     .hero-photo{
         width: 45%;
+        overflow: hidden;
         @media (max-width: 1200px) {
             display: none;
         }
-        overflow: hidden;
+        &-mobile{
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            opacity: 0.2;
+            z-index: -1;
+            img{
+                width: 100%;
+            }
+            @media (min-width: 1200px) {
+                display: none;
+            }
+        }
         img{
             width: 100%;
         }
@@ -125,6 +141,9 @@ const Hero = () =>{
             className="hero-photo">
                 <img src={HeroImage} alt=""/>
             </motion.div>
+            <div className="hero-photo-mobile">
+                <img src={HeroImage} alt=""/>
+            </div>
         </HeroStyles>
     )
 }
