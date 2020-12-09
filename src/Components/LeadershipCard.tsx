@@ -33,7 +33,7 @@ const LeadershipCardStyles = styled(motion.div)`
 `
 
 const LeadershipCard = (props: Leader) => {
-    const {element, controls} = useScroll(0);
+    const {element, controls} = useScroll(0.2);
     const {revealAnimation} = useAnimations();
     return (
         <LeadershipCardStyles
