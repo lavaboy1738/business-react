@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import {Leader} from "../data/LeadershipData";
+import { useAnimations } from "../Hooks/useAnimations";
+import { useScroll } from "../Hooks/useScroll";
+import {motion} from "framer-motion";
 
-const LeadershipCardStyles = styled.div`
+const LeadershipCardStyles = styled(motion.div)`
 
     img{
         width: 100%;
@@ -30,8 +33,15 @@ const LeadershipCardStyles = styled.div`
 `
 
 const LeadershipCard = (props: Leader) => {
+    const {element, controls} = useScroll(0.2)
+    const {revealAnimation} = useAnimations();
     return (
-        <LeadershipCardStyles>
+        <LeadershipCardStyles
+        variants={revealAnimation}
+        initial="hidden"
+        ref={element}
+        animate={controls}
+        >
             <img src={props.url} alt=""/>
             <div className="name">{props.name}</div>
             <div className="job-title">{props.title}</div>

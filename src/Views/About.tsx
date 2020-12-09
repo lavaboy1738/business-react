@@ -5,6 +5,8 @@ import {LeadershipCard} from "../Components/LeadershipCard";
 import {LeadershipData} from "../data/LeadershipData";
 import {motion} from "framer-motion";
 import {useTransitions} from "../Hooks/useTransitions";
+import {useAnimations} from "../Hooks/useAnimations"
+import {useScroll} from "../Hooks/useScroll";
 
 
 const AboutStyle = styled(motion.div)`
@@ -65,6 +67,9 @@ const AboutStyle = styled(motion.div)`
 
 const About = ()=>{
     const {Transition} = useTransitions();
+    const firstScroll= useScroll(0.2);
+    const secondScroll = useScroll(0.2);
+    const {staggerChildrenAnimation, revealAnimation, titleAnimation} = useAnimations();
     return (
         <AboutStyle variants={Transition}  initial="hidden" animate="show" exit="exit">
             <section className="header">
@@ -72,10 +77,21 @@ const About = ()=>{
                 <div className="subtitle">We get it done, by any means necessary.</div>
                 <img src={AboutHeader} alt=""/>
             </section>
-            <section className="main">
-                <div className="title"> <span>Idea</span> Matters</div>
-                <div className="subtitle">Everything begins with an "ah-ha" moment</div>
-                <div className="main-text">
+            <motion.section 
+            variants={staggerChildrenAnimation}
+            initial="hidden"
+            ref={firstScroll.element}
+            animate={firstScroll.controls}
+            className="main">
+                <motion.div 
+                variants={titleAnimation}
+                className="title"> <span>Idea</span> Matters</motion.div>
+                <motion.div 
+                variants={titleAnimation}
+                className="subtitle">Everything begins with an "ah-ha" moment</motion.div>
+                <motion.div 
+                variants={revealAnimation}
+                className="main-text">
                     <p>Putting some random Drake lyrics here to fill.</p>
                     <p>Everybody has an addiction, mine happens to be success. I was born to make mistakes, not to fake perfection.
                     When writing the story of your life, don’t let anyone else hold the pen.
@@ -86,12 +102,19 @@ const About = ()=>{
                     Life can always change, you have to adjust.
                     </p>
                     <p>I'm a reflection of all your insecurities.</p>
-                </div>
-            </section>
-            <section className="leadership">
-                <div className="title">Leadership</div>
-                <div className="subtitle">They don't bite. Relax, kid.</div>
-                <div className="leadership-content">
+                </motion.div>
+            </motion.section>
+            <motion.section 
+            variants={staggerChildrenAnimation}
+            initial="hidden"
+            ref={secondScroll.element}
+            animate={secondScroll.controls}
+            className="leadership">
+                <motion.div variants={titleAnimation} className="title">Leadership</motion.div>
+                <motion.div variants={titleAnimation} className="subtitle">They don't bite. Relax, kid.</motion.div>
+                <motion.div 
+                variants={staggerChildrenAnimation} 
+                className="leadership-content">
                     {LeadershipData.map((card)=>{
                         return(
                             <div className="leader" key={card.id}>
@@ -105,8 +128,8 @@ const About = ()=>{
                             </div>
                         )
                     })}
-                </div>
-            </section>
+                </motion.div>
+            </motion.section>
         </AboutStyle>
     )
 }

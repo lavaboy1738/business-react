@@ -3,8 +3,8 @@ import { useInView } from "react-intersection-observer";
 import {useAnimation} from "framer-motion";
 
 export const useScroll = (threshold: number) => {
-    const [element, inView] = useInView({threshold})
     const controls = useAnimation();
+    const [element, inView] = useInView({threshold})
     const count = useRef(false);
     useEffect(()=>{
         if(!count.current){
