@@ -68,7 +68,7 @@ const AboutStyle = styled(motion.div)`
 const About = ()=>{
     const {Transition} = useTransitions();
     const firstScroll= useScroll(0.2);
-    const secondScroll = useScroll(0.2);
+    const secondScroll = useScroll(0);
     const {staggerChildrenAnimation, revealAnimation, titleAnimation} = useAnimations();
     return (
         <AboutStyle variants={Transition}  initial="hidden" animate="show" exit="exit">
@@ -112,8 +112,7 @@ const About = ()=>{
             className="leadership">
                 <motion.div variants={titleAnimation} className="title">Leadership</motion.div>
                 <motion.div variants={titleAnimation} className="subtitle">They don't bite. Relax, kid.</motion.div>
-                <motion.div 
-                variants={staggerChildrenAnimation} 
+                <div 
                 className="leadership-content">
                     {LeadershipData.map((card)=>{
                         return(
@@ -128,7 +127,7 @@ const About = ()=>{
                             </div>
                         )
                     })}
-                </motion.div>
+                </div>
             </motion.section>
         </AboutStyle>
     )

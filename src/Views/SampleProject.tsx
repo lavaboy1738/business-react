@@ -7,6 +7,8 @@ import Sample2 from "../assets/images/sample-2.jpg";
 import Sample3 from "../assets/images/sample-3.jpg";
 import {motion} from "framer-motion";
 import {useTransitions} from "../Hooks/useTransitions";
+import { useScroll } from "../Hooks/useScroll";
+import { useAnimations } from "../Hooks/useAnimations";
 
 const SampleProjectStyled = styled(motion.div)`
     padding: 2rem 5vw;
@@ -105,50 +107,80 @@ const SampleProjectStyled = styled(motion.div)`
 
 const SampleProject = ()=>{
     const {Transition} = useTransitions();
+    const firstScroll = useScroll(0.2);
+    const secondScroll = useScroll(0.2);
+    const thirdScroll = useScroll(0.2);
+    const fourthScroll = useScroll(0.2);
+    const {titleAnimation, revealAnimation, staggerChildrenAnimation} = useAnimations();
     return (
         <SampleProjectStyled variants={Transition} initial="hidden" animate="show" exit="exit">
-            <section className="project-header">
+            <section 
+            className="project-header">
                 <div className="title">Sample Project</div>
                 <div className="subtitle">This is just a template of a sample project. Use it as a reference.</div>
                 <div className="sample-image">
                     <img src={SampleHeader} alt=""/>
                 </div>
             </section>
-            <section className="project-description">
-                <div className="description-section">
-                    <h2 className="description-title">Brand Story</h2>
-                    <p className="description-text">
+            <section 
+            className="project-description">
+                <motion.div
+                variants={staggerChildrenAnimation}
+                initial="hidden"
+                ref={firstScroll.element}
+                animate={firstScroll.controls}
+                className="description-section">
+                    <motion.h2 variants={titleAnimation} className="description-title">Brand Story</motion.h2>
+                    <motion.p variants={titleAnimation} className="description-text">
                         All of the pictures used on this sample website are sourced from unsplash.com. They are royalty-free and free to use. This paragraph is an attempt to credit all the content creators that created these images.
                         Unsplash.com is a great place to find high quality images to use on any projects that are not monetized. I think there are also a few other websites that provide the same service, however, unsplash is my default option
                         when it comes to this sort of stuff. 
-                    </p>
-                </div>
-                <div className="description-section">
-                    <h2 className="description-title">Distribution</h2>
-                    <p className="description-text">Facebook Pixel, Google Ads, Social, Print, Outdoor</p>
-                </div>
-                <div className="description-section description-side">
-                    <div className="description-side-picture">
+                    </motion.p>
+                </motion.div>
+
+                <motion.div 
+                variants={staggerChildrenAnimation}
+                initial="hidden"
+                ref={secondScroll.element}
+                animate={secondScroll.controls}
+                className="description-section">
+                    <motion.h2 variants={titleAnimation} className="description-title">Distribution</motion.h2>
+                    <motion.p variants={titleAnimation} className="description-text">Facebook Pixel, Google Ads, Social, Print, Outdoor</motion.p>
+                </motion.div>
+
+                <motion.div 
+                variants={staggerChildrenAnimation}
+                initial="hidden"
+                ref={thirdScroll.element}
+                animate={thirdScroll.controls}
+                className="description-section description-side">
+                    <motion.div variants={revealAnimation}  className="description-side-picture">
                         <img src={SampleSide} alt=""/>
-                    </div>
-                    <div className="description-side-text description-text">
+                    </motion.div>
+                    <motion.div variants={revealAnimation}  className="description-side-text description-text">
                         <p>This is a cool picture of a girl in front of a neon sign. I'm seriously running out of words of what to put here.
                             Recently I acquired a new keyboard because the old one that I've been using for a while often produces input errors, which can 
                             be very inconvenient at times.
                         </p>
-                    </div>
-                </div>
-                <div className="description-section description-side">
-                    <div className="description-side-picture">
+                    </motion.div>
+                </motion.div>
+
+                <motion.div 
+                variants={staggerChildrenAnimation}
+                initial="hidden"
+                ref={fourthScroll.element}
+                animate={fourthScroll.controls}
+                className="description-section description-side">
+                    <motion.div variants={revealAnimation}  className="description-side-picture">
                         <img src={Sample2} alt=""/>
                         <div className="spacer"></div>
                         <img src={Sample3} alt=""/>
-                    </div>
-                    <div className="description-side-picture">
-                    <div className="spacer"></div>
+                    </motion.div>
+                    <motion.div variants={revealAnimation}  className="description-side-picture">
+                        <div className="spacer"></div>
                         <img src={Sample1} alt=""/>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             </section>
         </SampleProjectStyled>
     )
