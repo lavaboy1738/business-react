@@ -5,9 +5,9 @@ import {useAnimations} from "../Hooks/useAnimations";
 
 const ServiceCardStyle = styled(motion.div)`
 width: 45%;
+margin-bottom: 1rem;
 @media (max-width: 420px) {
             width: 100%;
-            padding: 1rem 0;
 }
     .card-icon{
         @media (max-width: 420px) {
@@ -20,6 +20,9 @@ width: 45%;
         font-family: Jakarta-display;
         font-weight: 600;
         font-size: 1.2rem;
+        @media (max-width: 420px) {
+            color: #768cff;
+        }
     }
     .card-text{
         font-family: Jakarta-text;

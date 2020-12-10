@@ -21,16 +21,16 @@ const NavStyles = styled.div`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        @media (max-width: 600px) {
+        @media (max-width: 1023px) {
             display: none;
         }
-        @media (min-width: 600px) and (max-width: 1024px){
+        /* @media (min-width: 600px) and (max-width: 1024px){
             width: 50%;
-        }
+        } */
     }
     i{
         font-size: 3rem;
-        @media (min-width: 768px) {
+        @media (min-width: 1023px) {
             display: none;
         }
     }
@@ -47,7 +47,7 @@ const NavStyles = styled.div`
         justify-content: center;
         background-color: #222;
         transition: 0.7s all ease-in-out;
-        @media (min-width: 768px) {
+        @media (min-width: 1023px) {
             display: none;
         }
         &.active{

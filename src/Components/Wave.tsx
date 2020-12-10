@@ -6,6 +6,9 @@ const WaveStyle = styled.svg`
 position: absolute;
 left: 0;
 z-index: -1;
+    @media (max-width: 420px){
+        display: none;
+    }
 `
 
 const PathStyle = styled(motion.path)<any>``
