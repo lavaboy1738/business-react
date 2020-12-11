@@ -12,6 +12,7 @@ export const useTransitions = () => {
             transition: {
                 duration: 1.5,
                 ease: "easeOut",
+                delay: 1
             }
         },
         exit: {
