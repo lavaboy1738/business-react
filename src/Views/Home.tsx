@@ -6,6 +6,7 @@ import {Accordion} from "../Components/Accordion";
 import {motion} from "framer-motion";
 import {useTransitions} from "../Hooks/useTransitions";
 import {Homework} from "../Components/Homework";
+import {Footer} from "../Components/Footer";
 
 
 const HomeStyles = styled(motion.div)`
@@ -14,6 +15,7 @@ const HomeStyles = styled(motion.div)`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 5vw;
 `
 
 
@@ -25,6 +27,7 @@ const Home = () =>{
             <Services/>
             <Homework/>
             <Accordion/>
+            <Footer/>
         </HomeStyles>
     )
 }

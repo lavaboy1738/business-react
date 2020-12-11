@@ -1,12 +1,24 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+
+const footerAnimation = keyframes`
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+`
 
 const FooterStyle = styled.div`
-    padding: 2rem 5vw;
+    width: 100%;
+    padding: 2rem 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     color: #333;
+    animation: ${footerAnimation} 1s linear;
     .footer-left{
         width: 38%;
         @media (max-width: 420px) {

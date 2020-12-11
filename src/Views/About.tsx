@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import AboutHeader from "../assets/images/about-header.jpg";
+import {Footer} from "../Components/Footer";
 import {LeadershipCard} from "../Components/LeadershipCard";
 import {LeadershipData} from "../data/LeadershipData";
 import {motion} from "framer-motion";
@@ -129,6 +130,7 @@ const About = ()=>{
                     })}
                 </div>
             </motion.section>
+            <Footer/>
         </AboutStyle>
     )
 }

@@ -4,6 +4,7 @@ import {ArrangedProjects} from "../data/ProjectsData";
 import {WorkContent} from "../Components/WorkContent";
 import {motion} from "framer-motion";
 import {useTransitions} from "../Hooks/useTransitions";
+import {Footer} from "../Components/Footer";
 
 const WorksStyles = styled(motion.div)`
     padding: 2rem 5vw;
@@ -36,6 +37,7 @@ const Works = () =>{
                 <div className="works-title-sub">Creativity, Quality, <span>Perfection.</span></div>
             </div>
             <WorkContent projectsArr={ArrangedProjects} />
+            <Footer/>
         </WorksStyles>
     )
 }

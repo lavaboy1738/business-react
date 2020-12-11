@@ -6,7 +6,7 @@ import {DefaultButton} from "./DefaultButton";
 import {ArrangedProjects} from "../data/ProjectsData";
 
 const HomeworkStyle = styled.div`
-    padding: 2rem 5vw;
+    padding: 2rem 0;
     .title{
         font-family: Jakarta-display;
         font-size: 2rem;

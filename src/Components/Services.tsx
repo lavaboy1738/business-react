@@ -9,7 +9,6 @@ import {useAnimations} from "../Hooks/useAnimations";
 import {useScroll} from "../Hooks/useScroll";
 
 const ServicesStyles = styled(motion.div)`
-    width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;

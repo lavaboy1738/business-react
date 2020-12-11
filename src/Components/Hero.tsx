@@ -7,7 +7,6 @@ import {useAnimations} from "../Hooks/useAnimations";
 
 const HeroStyles = styled(motion.div)`
     min-height: 90vh;
-    width: 90%;
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {Footer} from "../Components/Footer";
 import {Key} from "../Credentials";
 import {motion} from "framer-motion";
 import {useTransitions} from "../Hooks/useTransitions";
@@ -87,6 +88,7 @@ const Contact = () =>{
                     </iframe>
                 </div>
             </div>
+            <Footer/>
         </ContactStyle>
     )
 }

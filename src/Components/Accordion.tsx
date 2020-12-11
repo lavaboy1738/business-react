@@ -7,7 +7,7 @@ import {motion} from "framer-motion";
 import {useScroll} from "../Hooks/useScroll";
 
 const AccordionStyles = styled(motion.div)`
-width: 90%;
+width: 100%;
     .accordion-title{
         font-family: Jakarta-display;
         font-weight: 600;

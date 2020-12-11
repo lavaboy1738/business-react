@@ -5,6 +5,7 @@ import SampleSide from "../assets/images/sample-side.jpg";
 import Sample1 from "../assets/images/sample-1.jpg";
 import Sample2 from "../assets/images/sample-2.jpg";
 import Sample3 from "../assets/images/sample-3.jpg";
+import {Footer} from "../Components/Footer";
 import {motion} from "framer-motion";
 import {useTransitions} from "../Hooks/useTransitions";
 import { useScroll } from "../Hooks/useScroll";
@@ -182,6 +183,7 @@ const SampleProject = ()=>{
                     </motion.div>
                 </motion.div>
             </section>
+            <Footer/>
         </SampleProjectStyled>
     )
 }
