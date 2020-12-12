@@ -90,12 +90,12 @@ const HeroStyles = styled(motion.div)`
 `
 
 const Hero = () =>{
-    const {staggerChildrenAnimation, pictureAnimation, titleAnimation, lineContainerAnimation} = useAnimations();
+    const {staggerChildrenAnimation, heroPictureAnimation, titleAnimation, lineContainerAnimation, heroStagger} = useAnimations();
 
     return(
-        <HeroStyles variants={staggerChildrenAnimation} initial="hidden" animate="show">
+        <HeroStyles variants={heroStagger} initial="hidden" animate="show">
             <motion.div 
-            variants={staggerChildrenAnimation}
+            variants={heroStagger}
             initial="hidden"
             animate="show"
             className="hero-description">
@@ -134,7 +134,7 @@ const Hero = () =>{
                 </motion.div>
             </motion.div>
             <motion.div 
-            variants={pictureAnimation}
+            variants={heroPictureAnimation}
             initial= "hidden"
             animate="show"
             className="hero-photo">

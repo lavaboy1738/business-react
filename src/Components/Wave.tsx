@@ -21,7 +21,8 @@ const PathAnimation = {
         pathLength: 1, 
         pathOffset: 0 ,
         transition: {
-            duration: 1
+            duration: 1.5,
+            delay: 1
         }
     }
 }
